@@ -6,4 +6,4 @@ console.log(num1 === num2);
 
 // It means == checks only value nut === checks value and data type both
 console.log(typeof (num1));
-console.log(typeof (num2));
+console.log(typeof (num2)); 
