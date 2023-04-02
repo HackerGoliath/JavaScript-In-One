@@ -176,11 +176,112 @@ let prices = [240, 350, 450, 670, 700]
 // console.log(plants);
 // console.log(count);
 
-// Array.prototype.splice(): Add or remove Elements from an array
+// Array.prototype.splice(): Add or remove Elements from an array. Can perform all CRUD operations
 /*Tasks: Use One method only
 1: Add Dec at the end of array
 2: What is the return value of splice method
 3: Update march to March
 4: Delete June from array
 */
-const months = ["Jan", "March", "April", "June", "July"]
+const months = ["Jan", "march", "April", "June", "July"]
+
+// Add an element
+// sol1:
+// months.splice(5, 0, "Dec")
+// const newMonths = months.splice(months.length, 0, "Dec")
+// console.log(months);
+
+// sol2: return value of splice method => returns deleted elements
+// console.log(newMonths);
+
+// sol3: Update
+// 1st method: must know index
+// const updateMonth = months.splice(1, 1, "March");
+
+// 2nd method: No need to know index
+// const indexOfMonth = months.indexOf("march");
+// if (indexOfMonth !== -1) {
+//     months.splice(indexOfMonth, 1, "March")
+//     console.log(months);
+// }
+// else {
+//     console.log("No such data found");
+// }
+
+// sol4: Delete
+// const indexOfMonth = months.indexOf("June");
+// if (indexOfMonth !== -1) {
+//     // 2nd arguement is no of element you want to delete
+//     const delMonth = months.splice(indexOfMonth, 1)
+//     console.log(months);
+//     console.log(delMonth);
+// }
+// else {
+//     console.log("No such data found");
+// }
+
+
+// Delete all elements from certain element
+// const indexOfMonth = months.indexOf("April");
+// if (indexOfMonth !== -1) {
+//     // 2nd arguement is no of element you want to delete
+//     const delMonth = months.splice(indexOfMonth, Infinity)
+//     console.log(months);
+//     console.log(delMonth);
+// }
+// else {
+//     console.log("No such data found");
+// }
+// ====================================================
+
+// 5. Map And Reduce method: does not change original array.
+//  Array.prototype.map(): returns a new array containing the results of a
+// function on every element in this array-> returns true or false
+// const arr1 = [1, 4, 7, 9, 12, 34, 13, 87, 19]
+// const newArr = arr1.map((element, index, array) => {
+//     // console.log(element, index, array);
+//     return element > 9
+// })
+
+// map method does not mutate original array but foreach do
+// let newArr = arr1.map((elem, ind, arr) => {
+//     return `${ind} : ${elem} of ${arr}`
+// })
+// }).reduce(elem => elem > 9)
+// console.log(arr1);
+// console.log(newArr);
+
+// Difference between map and forEach:
+// 1. map returns new array while forEach returns undefined
+// 2. map doen not change original array but forEach change original array
+// 3.}).reduce(elem => elem > 9) such type of things you can not do with forEach
+// let newArrForEach = arr1.forEach((elem, ind, arr) => {
+//     return `${ind} : ${elem} of ${arr}`
+// })
+// console.log(arr1);
+// console.log(newArrForEach);
+// -------------------------------------------
+
+// reduce method: does not change original array
+// Array.prototype.reduce((accumulator,element,index,array)=>code)
+// accumulator is the initial value, element is the current value, index is the index of current element, array is the array
+// return the final value
+// const arr1 = [1, 4, 7, 9]
+// const newArr = arr1.reduce((accumulator, element, index, array) => {
+//     debugger;
+//     return accumulator + element
+// Add an element in array then add
+// }, 7)
+// console.log(arr1);
+// console.log(newArr);
+// ------------------------------------------------------
+
+// Flatten an array or converting 2d or 3d array into one dimensional array
+const arr = [
+    ["zone_1", "zone_1.1"],
+    ["zone_2", "zone_2.1"],
+    ["zone_3", "zone_3.1"]
+]
+const flatArr = arr.reduce((accum, elem) => accum.concat(elem))
+console.log(flatArr);
+
