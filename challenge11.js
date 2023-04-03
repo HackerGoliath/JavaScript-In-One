@@ -1,13 +1,8 @@
-//1. Find the square root of each in 
-// const arr1 = [25, 36, 49, 64, 81]
-// const newArr = arr1.map(x => x ** (1 / 2))
-// const newArr = arr1.map(x => Math.sqrt(x))
-// console.log(newArr);
+// Display only 280 characters of a string like the one used in twitter
+let myTweet = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla bibendum urna libero, eu fringilla diam tristique sit amet. Praesent ac tellus congue, aliquet sapien sit amet, cursus quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin non turpis euismod, bibendum magna eget, rhoncus urna. Vivamus vel semper urna. Sed euismod, lorem ac sagittis congue, ante mauris euismod felis, ut fermentum nisi mauris eget lorem. Nullam non hendrerit neque. Maecenas a est vel quam aliquet viverra at at odio. Suspendisse vel augue quis orci scelerisque rhoncus. Suspendisse potenti. Nulla facilisi. Proin suscipit magna at justo feugiat malesuada. Donec in dui eget nisi malesuada iaculis ac vel tortor. Sed faucibus, metus at consequat consectetur, augue nunc auctor felis, quis varius lacus turpis quis magna. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse ornare nisi ut consectetur tristique. Sed at justo ut purus feugiat euismod. Quisque non justo non velit vehicula hendrerit a et ante. Sed hendrerit augue ut ipsum finibus, sit amet pharetra risus euismod. Vivamus malesuada orci ac fermentum consectetur. Donec bibendum sapien eget tincidunt malesuada. Vivamus ullamcorper, velit ac posuere sagittis, ipsum tellus imperdiet tellus, eu sagittis nibh nibh ut odio. Integer ultrices felis at mauris consectetur, euismod tempor enim consequat. Sed congue lacus libero, vel efficitur augue fringilla nec. In volutpat eget nulla vitae aliquam. Sed ullamcorper, odio sit amet posuere auctor, velit augue commodo quam, non ullamcorper purus lorem ac enim. Nullam scelerisque nisl eget nisi euismod, vel rhoncus augue venenatis. Aenean at odio nec nisi commodo dictum. Morbi placerat fermentum tellus, vitae varius turpis sagittis non. Sed in quam non lectus lacinia euismod. In vulputate risus vel risus eleifend"
 
-// 2. Multiply each element by 2 and return only those which are greater than 10
-const arr2 = [2, 3, 4, 6, 8]
-// const newArr2 = arr2.map(x => x = x * 2).filter(x => x > 10)
-// if we want some of rest elements use chainable method
-const newArr2 = arr2.map(x => x = x * 2).filter(x => x > 10).reduce((accumulator, elem) => accumulator + elem)
-console.log(newArr2);
+let disTweet = myTweet.slice(0, 280)
+console.log(disTweet);
+console.log(disTweet.length);
+
 
