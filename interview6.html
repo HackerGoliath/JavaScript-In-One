@@ -1,0 +1,72 @@
+<!-- Difference between getElementById and querySelector?
+ getElementById: returns a reference to the element by its id.
+ if the elements is not present its returns nul
+
+ querySelector: returns the first element within the document 
+ that matches the specified group of selectors,
+ or null if no match found -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Beautiful List</title>
+    <style>
+        ul {
+            list-style: none;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        li {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 18px;
+            color: #333;
+            text-transform: uppercase;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        li:hover {
+            border-bottom-color: #555;
+        }
+
+        #web-id {
+            font-weight: bold;
+        }
+
+        .web-class {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li id="web-id">PHP</li>
+        <li>HTML</li>
+        <li class="web-class">CSS</li>
+        <li class="web-class">JavaScript</li>
+    </ul>
+
+    <script>
+        // similarities
+        // console.log(document.getElementById("web-id").innerHTML);
+        // console.log(document.querySelector("#web-id").innerHTML);
+
+        // Differnces
+        // if you want to get the html content of third li 
+        // then you can not get with getElementById
+        // because there is no id associated with it 
+        // but you can get by querySelector
+        console.log(document.querySelector("ul li.web-class").innerHTML);
+        console.log(document.querySelector("li.web-class").innerHTML);
+        console.log(document.querySelector(".web-class").innerHTML);
+        // console.log(document.getElementsByClassName("web-class").innerHTML); // can't get with className also
+
+    </script>
+</body>
+</html>

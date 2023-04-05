@@ -4,9 +4,125 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <title>How to search the elements and references</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #2a364f;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .para {
+            text-align: center;
+            font-size: 20px;
+            margin: 20px 0;
+            background-color: #ffffff;
+            color: #333333;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        form {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+            /* Add some space between radio button and text */
+        }
+
+        label {
+            color: #fff;
+            margin-inline: 30px;
+            /* Change text color of labels */
+        }
+
+        h1#heading {
+            font-size: 32px;
+            text-align: center;
+            margin: 40px 0;
+            background-color: crimson;
+            color: aqua;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .button {
+            background-color: #008CBA;
+            border: none;
+            color: #ffffff;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .button:hover {
+            background-color: #005f70;
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+        }
+    </style>
 </head>
 <body>
+    <!-- tag eg: <p></p>
+    element eg: <p>element</p> -->
+    <p class="para">Please Like the video 1</p>
+    <p class="para">Please Share the video 2</p>
+    <p style="color: aliceblue;">Don't forget to subscribe</p>
+    <h1 id="heading">changed the content of the h1</h1>
+    <form>
+        <label for="male">
+            <input type="radio" name="gender" id="male" value="male">
+            Male
+        </label>
+        <label for="female">
+            <input type="radio" name="gender" id="female" value="female">
+            Female
+        </label>
+        <label for="transgender">
+            <input type="radio" name="gender" id="transgender" value="transgender">
+            Transgender
+        </label>
+    </form>
 
+    <button class="button" onclick="changeContent()">Click here</button>
+
+
+    <script>
+        const changeContent = () => {
+            // By using search
+            // document.getElementById("heading").innerHTML = "Welcome to Home Page"
+
+            // By using the reference
+            // const headingChange = document.getElementById("heading")
+            // headingChange.innerHTML = "Welcome to Home Page"
+
+            // console.log(document.getElementsByClassName("para"));
+            // console.log(document.getElementsByTagName("p"));
+            // console.log(document.getElementsByName("gender"));
+            // ============================================================
+
+            // query Selectors
+            // querySelector: returns the first matching values and have the ability to change it
+            // querySelectorAll: returns the all matching values
+            // document.querySelector("#heading").innerHTML = "I changed again"
+            // document.querySelector(".para").innerHTML = "Para changed"
+            // document.querySelectorAll(".para").innerHTML = "Para changed" //does't work
+            console.log(document.querySelectorAll(".para"))
+            console.log(document.querySelectorAll("#heading"))
+        }
+    </script>
 </body>
 </html>
