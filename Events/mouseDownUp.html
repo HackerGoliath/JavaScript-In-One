@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Up and Down Events</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #333333;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+
+        #myP {
+            padding: 20px;
+            background-color: #222222;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.5;
+            cursor: pointer;
+        }
+
+        #myP:hover {
+            background-color: #333333;
+        }
+    </style>
+</head>
+<body>
+    <p id="myP" onmousedown="mouseDown()" onmouseup="mouseUp()">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos consequatur deleniti vero numquam, error magnam
+        minus maiores quos repellat, eius molestiae. Corrupti nihil ducimus facere excepturi reprehenderit unde
+        molestiae, officia, quam similique omnis facilis.
+    </p>
+
+    <script>
+        function mouseDown() {
+            document.getElementById("myP").style.color = "crimson"
+        }
+
+        function mouseUp() {
+            document.getElementById("myP").style.color = "greenyellow"
+        }
+    </script>
+</body>
+</html>

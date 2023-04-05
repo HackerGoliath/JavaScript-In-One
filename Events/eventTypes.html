@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #2a364f;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: limegreen
+        }
+
+        .buttons-box {
+            display: flex;
+            justify-content: center;
+        }
+
+        button {
+            padding: 0.5rem 1rem;
+            margin: 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 1rem;
+            cursor: pointer;
+            background-color: #f8b627;
+            border: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            width: auto;
+            height: 5rem;
+            margin-inline: 30px;
+            color: teal;
+            font-weight: 600;
+        }
+
+        button:hover {
+            background-color: #ffd966;
+        }
+
+        .para {
+            font-weight: 400;
+            color: crimson
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Different Event Types In JavaScript</h1>
+        <div class="buttons-box">
+            <button onclick="alert('I am awesome but no one use me')">Simple Inline<br><span
+                    class="para">[alert()]</span></button>
+            <button onclick="callingFunction()">By Calling A Function <br><span class="para">[function
+                    name]</span></button>
+            <button id="thirdWay">Inline Events <br><span class="para">[getElementById]</span></button>
+            <button id="fourthWay">Event Listeners <br><span class="para">[addEventListener]</span></button>
+        </div>
+    </div>
+
+
+    <script>
+        // 2nd way of calling events
+        const callingFunction = () => {
+            alert("Most common way of writing functions")
+        }
+
+        // 3rd way of calling events
+        const thirdWay = document.getElementById("thirdWay")
+        thirdWay.onclick = function () {
+            alert("Another Most Common Way Of Writing Function")
+        }
+        // Limitation: Overwrite previous event. Can not call same event multiple time
+        thirdWay.onclick = function () {
+            console.log("Another Most Common Way Of Writing Function")
+        }
+
+        // 4th way of calling events
+        const fourthWay = document.querySelector("#fourthWay")
+        fourthWay.addEventListener("click", () => {
+            alert("It is the modern way of calling functions")
+        })
+        // Advantage: Listening both events does not override previous events as happen in 3rd way
+        // call multiple time the same event
+        fourthWay.addEventListener("click", () => {
+            console.log("It is the modern way of calling functions")
+        })
+    </script>
+</body>
+</html>

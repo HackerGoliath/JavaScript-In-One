@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Object</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #2a364f;
+            flex-direction: column;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: limegreen
+        }
+
+        button {
+            padding: 0.5rem 1rem;
+            margin-block: 5rem;
+            border-radius: 0.25rem;
+            font-size: 1rem;
+            cursor: pointer;
+            background-color: #f8b627;
+            border: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            width: auto;
+            height: 5rem;
+            margin-inline: 30px;
+            color: teal;
+            font-weight: 600;
+        }
+
+        button:hover {
+            background-color: #ffd966;
+        }
+    </style>
+</head>
+<body>
+    <h1>What is an Event Object 🤩</h1>
+    <button id="events">Event Listeners</button>
+
+    <script>
+        const eventListeners = document.getElementById("events")
+        const checkEvent = () => {
+            alert("Hum dekh rhe hai Event Object")
+            console.log(event);
+            console.log(event.target);
+            console.log(event.type);
+        }
+        eventListeners.addEventListener("click", checkEvent)
+    </script>
+</body>
+</html>

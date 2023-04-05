@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Events</title>
+    <style>
+        body {
+            background-color: #2a364f;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        input[type="text"] {
+            border: none;
+            border-bottom: 2px solid #eee;
+            font-size: 1.2em;
+            padding: 10px;
+            width: 300px;
+            outline: none;
+            transition: border-color 0.3s ease-in-out;
+            background-color: #34495e;
+            color: #fff;
+        }
+
+        input[type="text"]:focus {
+            border-color: #FFD700;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-block: 5rem;
+            text-align: center;
+            color: #ddd;
+        }
+
+        #keys {
+            color: #FFD700;
+            margin-block: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>A function is triggered when the user presses a key in the input field</p>
+        <br>
+        <input type="text" class="effect-1" onkeypress="keyPress()" onkeydown="keyDown()" onkeyup="keyUp()">
+        <br>
+        <p id="keys"></p>
+    </div>
+
+    <script>
+        // const keyPress = () => {
+        //     document.getElementById("keys").innerHTML = `You press ${event.key} and its code is ${event.code}`
+        // }
+
+        const keyDown = () => {
+            document.getElementById("keys").innerHTML = `Key is down`
+        }
+
+        const keyUp = () => {
+            document.getElementById("keys").innerHTML = `Key is up`
+        }
+    </script>
+</body>
+</html>

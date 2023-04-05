@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Events</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #222;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        .main-div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .main-div div {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        label {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        input[type="text"],
+        select {
+            padding: 10px;
+            border: none;
+            background-color: #444;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            color: #fff;
+        }
+
+        input[type="text"]:focus,
+        select:focus {
+            outline: none;
+            border-color: #6c5ce7;
+        }
+
+        #result {
+            font-size: 20px;
+            margin-top: 20px;
+            color: #00b894
+        }
+
+        select {
+            width: 100%;
+            background-color: #444;
+            color: #fff;
+        }
+
+        /* Add some fun colors to the ice cream options */
+        #iceCreams option[value="chocolate"] {
+            background-color: #9b4dca;
+            color: #fff;
+        }
+
+        #iceCreams option[value="sardine"] {
+            background-color: #ff6b6b;
+            color: #fff;
+        }
+
+        #iceCreams option[value="vanilla"] {
+            background-color: #00b894;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-div">
+        <div>
+            <label for="">Your Name 👉🏼</label>
+            <input type="text" name="" id="ice">
+            <br>
+            <label for="">Choose an ice cream flavour🤩
+                <!-- By Using Inline Event -->
+                <!-- <select name="iceCreams" id="iceCreams" onchange="selectElement()"> -->
+
+                <!-- By using addEventListener -->
+                <select name="iceCreams" id="iceCreams">
+                    <option value="">Select One...</option>
+                    <option value="chocolate">Chocolate</option>
+                    <option value="sardine">Sardine</option>
+                    <option value="vanilla">Vanilla</option>
+                </select>
+            </label>
+            <br>
+            <div id="result"></div>
+        </div>
+    </div>
+</body>
+<script>
+    // const selectElement = () => {
+    //     const inputChange = document.getElementById("ice").value
+    //     const iceCreams = document.getElementById("iceCreams").value
+    //     const result = document.getElementById("result")
+    //     result.innerHTML = `Mr.${inputChange} likes ${iceCreams} flavour of ice cream`
+    //     console.log(`${inputChange} and ${iceCreams}`);
+    // }
+
+    // By using addEventListener
+    const iceCreams = document.getElementById("iceCreams");
+    iceCreams.addEventListener("change", () => {
+        const inputChange = document.getElementById("ice").value
+        const flavour = iceCreams.value
+        const result = document.getElementById("result")
+        result.innerHTML = `Mr.${inputChange} likes ${flavour} flavour of ice cream`
+    })
+</script>
+</html>
