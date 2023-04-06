@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Time Out Function Event</title>
+    <style>
+        /* set background color and text color */
+        body {
+            background-color: #212121;
+            color: #fff;
+
+        }
+
+        /* center the main content div */
+        .main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-size: 24px;
+        }
+
+        /* style the button */
+        #btn {
+            background-color: #1E88E5;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* apply styles to the paragraph that will display the name */
+        #showMyName {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <p>Want to khow my Name 👨🏼‍✈️?</p>
+        <p id="showMyName"></p>
+        <br>
+        <button id="btn">Click Here</button>
+    </div>
+
+    <script>
+        const showMyName = document.querySelector("#showMyName");
+        const btn = document.querySelector("#btn");
+
+        const myName = () => {
+            showMyName.innerHTML = "loading ... 👻";
+            setTimeout(() => {
+                showMyName.innerHTML = "Deepak Babu"
+            }, 1000);
+        }
+        btn.addEventListener("click", myName)
+    </script>
+</body>
+</html>

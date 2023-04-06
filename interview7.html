@@ -1,1 +1,80 @@
 <!-- Difference between onclick and addEventListener -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Difference Between onclick and addEventListener</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .main {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        button {
+            padding: 1rem 2rem;
+            border: none;
+            background-color: #0077CC;
+            color: #fff;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #005EA8;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>Differnce between onclick and addEventListener</h1>
+        <button id="clickEvent">Inline Event</button>
+        <button id="eventListener">Event Listeners</button>
+    </div>
+
+
+
+    <script>
+        const clickEvent = document.getElementById("clickEvent");
+        clickEvent.onclick = function () {
+            alert("I am onclick Event")
+        }
+
+        // onclick Event overrides previous onclick event
+        clickEvent.onclick = function () {
+            console.log("onclick Event Clicked");
+        }
+
+
+        const eventListener = document.getElementById("eventListener");
+        eventListener.addEventListener("click", () => {
+            alert("I am eventListener")
+        })
+
+        // addEventListener does not override previous click event both worked one by one
+        const callingFunc = () => {
+            console.log("addEventListener Clicked");
+        }
+        eventListener.addEventListener("click", callingFunc)
+
+        // Conclusion: 1. addEventListener doen not override existing event handlers while onclick override
+        // existing event handlers
+        // 2. onclick will always work while addEventListener does not work in Internet Explorer before version 9
+    </script>
+</body>
+</html>
