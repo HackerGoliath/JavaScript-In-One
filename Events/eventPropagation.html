@@ -1,0 +1,74 @@
+<!-- By default event Bubbling phase applies -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Propagation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: beige;
+        }
+
+        .parentDiv {
+            width: 400px;
+            height: 300px;
+            background-color: #30b3db;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 5px solid #318eaac7;
+        }
+
+        .childDiv {
+            width: 200px;
+            height: 150px;
+            background-color: #d65656;
+            margin: auto;
+            border: 5px solid #773c3c;
+            /* other styles for child element */
+        }
+    </style>
+</head>
+<body>
+    <div class="parentDiv" id="parentId">
+        <div class="childDiv" id="childId"></div>
+    </div>
+</body>
+<script>
+    const parentId = document.getElementById("parentId");
+    const childId = document.getElementById("childId");
+
+    //  By default event Bubbling phase applies
+
+    const parentCall = () => {
+        alert("Parent Div Called")
+    }
+    const childCall = () => {
+        alert("Child Div Called")
+        // if you do not want event propagation. In this case event bubbling 
+        // event.stopPropagation();
+    }
+
+    // event bubbling
+    // parentId.addEventListener("click", parentCall);
+    // childId.addEventListener("click", childCall);
+
+    // event capturing-> from parent to child 
+    parentId.addEventListener("click", parentCall, true);
+    childId.addEventListener("click", childCall, true);
+</script>
+</html>
