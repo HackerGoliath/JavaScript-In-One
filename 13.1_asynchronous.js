@@ -187,12 +187,16 @@
 
 // JSON.stringify -> turns a Js Object into JSON text and stores that JSON text in a string, eg:
 
-let myObj = { key1: "some text", key2: true, key3: 5 }
-let objAsString = JSON.stringify(myObj);
-console.log(objAsString);
-console.log(typeof (objAsString));
+// let myObj = { key1: "some text", key2: true, key3: 5 }
+// let objAsString = JSON.stringify(myObj);
+// console.log(objAsString);
+// console.log(typeof (objAsString));
 
-// JSON.parse -> turns a string of JSON text into Js Object
-let strAsObject = JSON.parse(objAsString);
-console.log(strAsObject);
-console.log(typeof (strAsObject));
+// // JSON.parse -> turns a string of JSON text into Js Object
+// let strAsObject = JSON.parse(objAsString);
+// console.log(strAsObject);
+// console.log(typeof (strAsObject));
+// ==========================================================================================
+
+// Promises and async-await : =>
+// refer to dadJokes folder under Projects
