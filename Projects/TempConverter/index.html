@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Temperature Converter</title>
+</head>
+<body>
+    <!-- return false is used to prevent form auto submitted -->
+
+    <div class="container">
+        <h1>Enter the temperature you want to convert</h1>
+        <form id="tempCalc" onsubmit="calculateTemp(); return false">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="temp">Temperature:</label>
+                    <input type="number" name="temp" id="temp" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="temp_diff">Unit:</label>
+                    <select name="temp_diff" id="temp_diff" class="form-control" required>
+                        <option value="cel">°Celsius</option>
+                        <option value="fah">°Fahrenheit</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <button type="submit" class="btn btn-primary" name="temp">Convert</button>
+            </div>
+            <span id="resultContainer"></span>
+        </form>
+    </div>
+
+
+</body>
+<script src="script.js"></script>
+</html>
